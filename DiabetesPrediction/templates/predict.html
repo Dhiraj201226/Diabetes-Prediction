@@ -1,0 +1,82 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+   body {
+    position: relative;
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url("{% static 'DiabetesPrediiction/images/predict.jpeg' %}") no-repeat center center/cover;
+
+    filter: blur(8px);
+    transform: scale(1.1); /* prevents white edges */
+
+    z-index: -1;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Prediction Page</title>
+</head>
+<body>
+<div align="center">
+<p>Welcome to predict page!!</p>
+<h1>Please enter the following information</h1>
+
+<form action="result">
+    <table>
+        <tr>
+            <td align="right">Pregnancies</td>
+            <td align="left"><input type="text" name="n1"></td>
+        </tr>
+
+        <tr>
+            <td align="right">Glucose</td>
+            <td align="left"><input type="text" name="n2"></td>
+        </tr>
+
+        <tr>
+            <td align="right">Blood Pressure</td>
+            <td align="left"><input type="text" name="n3"></td>
+        </tr>
+
+        <tr>
+            <td align="right">Skin Thickness</td>
+            <td align="left"><input type="text" name="n4"></td>
+        </tr>
+
+        <tr>
+            <td align="right">Insulin</td>
+            <td align="left"><input type="text" name="n5"></td>
+        </tr>
+
+        <tr>
+            <td align="right">BMI</td>
+            <td align="left"><input type="text" name="n6"></td>
+        </tr>
+
+        <tr>
+            <td align="right">Diabetes Pedigree function</td>
+            <td align="left"><input type="text" name="n7"></td>
+        </tr>
+
+        <tr>
+            <td align="right">Age</td>
+            <td align="left"><input type="text" name="n8"></td>
+        </tr>
+    </table>
+    <input type="submit">
+</form>
+Result:{{result2}}
+</div>
+</body>
+</html>
